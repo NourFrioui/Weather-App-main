@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: weather-app-deployment
 spec:
-  replicas: 3  # Vous pouvez ajuster le nombre de réplicas selon vos besoins
+  replicas: 3  
   selector:
     matchLabels:
       app: weather-app

@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    triggers{
+        pollSCM('*/5 * * * *')
+    }
 
     environment {
         // Initialisation de variables globales
@@ -20,10 +23,9 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    // Testing (ajoutez vos étapes de test ici)
+    
                     sh 'npm install'
-                    sh 'npm test' // Exemple avec des tests npm, ajustez selon vos besoins
-                }
+                    sh 'npm test' /
             }
         }
 
