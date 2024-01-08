@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-app-deployment
+spec:
+  replicas: 3  # Vous pouvez ajuster le nombre de réplicas selon vos besoins
+  selector:
+    matchLabels:
+      app: weather-app
+  template:
+    metadata:
+      labels:
+        app: weather-app
+    spec:
+      containers:
+      - name: weather-app-container
+        image: nourfrioui/weather-app:latest  # Assurez-vous de correspondre à la version de votre image
+        ports:
+        - containerPort: 3000
