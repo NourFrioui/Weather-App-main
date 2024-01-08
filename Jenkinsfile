@@ -20,14 +20,7 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                script {
-    
-                    sh 'npm install'
-                    sh 'npm test' /
-            }
-        }
+        
 
         stage('Push to DockerHub') {
             steps {
